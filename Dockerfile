@@ -9,11 +9,10 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
-    libonig-dev && \  # Add this line to install oniguruma
+    libonig-dev && \
     docker-php-ext-configure gd --with-freetype --with-jpeg && \
     docker-php-ext-install gd pdo pdo_mysql bcmath mbstring && \
     apt-get clean
-
 
 # Copy the Laravel project files into the container
 COPY . .
